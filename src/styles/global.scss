@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root,
+body,
+main {
+    font-size: 20px;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    p > code,
+    article > pre {
+        background-color: #11111b !important;
+    }
+    article {
+        a:hover {
+            color: #cba6f7;
+        }
+    }
+}
+
+body {
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+main,
+footer {
+    width: 720px;
+    max-width: calc(100% - 2rem);
+    margin: auto;
+    padding: 3rem 1rem;
+}
+
+article {
+    a {
+        text-decoration: underline;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    margin: 2rem 0 1rem 0;
+    line-height: 1.2;
+    font-weight: 700;
+}
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4,
+h5,
+h6 {
+    font-size: 1.125rem;
+    font-size: 1rem;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+a {
+    &:hover {
+        color: #8839ef;
+    }
+}
+
+p,
+ul,
+ol {
+    margin-bottom: 1rem;
+}
+
+.prose p {
+    margin-bottom: 2rem;
+}
+
+code {
+    padding: 2px 5px;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 2px;
+
+    &,
+    & * {
+        font-family: "JetBrains Mono", "Courier New", Courier, monospace !important;
+    }
+}
+
+pre {
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: {
+        top: 1.5rem;
+        bottom: 1.5rem;
+    }
+}
+
+pre > code {
+    all: unset;
+}
+
+blockquote {
+    border-left: 4px solid #8839ef;
+    padding: 0 0 0 20px;
+    margin: 0px;
+    font-size: 1.333rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #6c6f85;
+    margin: {
+        top: 1rem;
+        bottom: 1rem;
+    }
+}
+
+@media (max-width: 720px) {
+    body {
+        font-size: 18px;
+    }
+    main {
+        padding: 1rem;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+::-webkit-scrollbar-track,
+::-webkit-resizer,
+::-webkit-scrollbar-corner {
+    background: #eff1f5;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccd0da;
+    &:hover {
+        background: #acb0be;
+    }
+}
+::selection {
+    color: #dce0e8;
+    background: #7287fd;
+}
+@media screen and (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track,
+    ::-webkit-resizer,
+    ::-webkit-scrollbar-corner {
+        background: #1e1e2e;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #313244;
+        &:hover {
+            background: #585b70;
+        }
+    }
+    ::selection {
+        color: #11111b;
+        background: #b4befe;
+    }
+}
+
+.toc-post {
+    .toc-item {
+        &.toc-item-h2 {
+            margin-left: 0;
+        }
+        &.toc-item-h3 {
+            margin-left: 0.5rem;
+        }
+        &.toc-item-h4 {
+            margin-left: 1rem;
+        }
+    }
+}
