@@ -5,7 +5,7 @@ import markdownConfig from "./markdown.config"
 import tailwind from "@astrojs/tailwind"
 
 export default defineConfig({
-    site: "https://thinkaboutit.blog",
+    site: "https://thinkofit.blog",
     integrations: [
         mdx({
             ...markdownConfig,
