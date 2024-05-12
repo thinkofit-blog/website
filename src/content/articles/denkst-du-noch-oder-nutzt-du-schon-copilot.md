@@ -1,5 +1,5 @@
 ---
-title: "Denkt du noch oder nutzt du schon Copilot?"
+title: "Denkst du noch oder nutzt du schon Copilot?"
 description: "KI hält uns davon ab, bessere Programmierer zu werden. Vielleicht hilft sie uns aber auch dabei, dass wir das gar nicht mehr müssen."
 pubDate: "May 11 2024"
 heroImage: "/lazy_nvim.jpg"
