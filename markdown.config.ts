@@ -1,5 +1,6 @@
 import remarkToc from "remark-toc"
 import rehypeToc from "rehype-toc"
+import rehypeSlug from "rehype-slug"
 
 export default {
     gfm: true,
@@ -7,6 +8,7 @@ export default {
     shikiConfig: { wrap: false, theme: "catppuccin-mocha" },
     remarkPlugins: [[remarkToc, { tight: true, ordered: true }]],
     rehypePlugins: [
+        rehypeSlug,
         [
             rehypeToc,
             {
