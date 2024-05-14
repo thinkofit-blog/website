@@ -1,0 +1,22 @@
+name: Format
+on:
+    pull_request:
+        branches: [main]
+jobs:
+    format:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.head_ref }}
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: "20.x"
+                  cache: pnpm
+            - run: pnpm install
+            - run: pnpm exec prettier --check .
+            - name: Commit changes
+              uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: Apply formatting changes
+                  branch: ${{ github.head_ref }}
