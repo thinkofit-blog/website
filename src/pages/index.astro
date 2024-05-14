@@ -13,7 +13,7 @@ const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.va
 <!doctype html>
 <html lang="de" class="bg-ctp-base text-ctp-text dark:ctp-mocha">
     <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead />
     </head>
     <body>
         <main>
@@ -34,7 +34,13 @@ const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.va
                             posts.map((post) => (
                                 <li>
                                     <a href={`/articles/${post.slug}/`} class="hover:text-ctp-mauve">
-                                        <img width={720} height={360} src={post.data.heroImage} alt="" />
+                                        <img
+                                            class="pointer-events-none"
+                                            width={720}
+                                            height={360}
+                                            src={post.data.heroImage}
+                                            alt=""
+                                        />
                                         <b>{post.data.title}</b>
                                         <p>
                                             <FormattedDate date={post.data.pubDate} />

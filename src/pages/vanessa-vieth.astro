@@ -3,21 +3,21 @@ import BaseHead from "../components/BaseHead.astro"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import Link from "../components/Link.astro"
-import { SITE_DESCRIPTION } from "../consts"
-
-const SITE_TITLE = `think.of("Vanessa Vieth");`
 ---
 
 <!doctype html>
 <html lang="de" class="bg-ctp-base text-ctp-text dark:ctp-mocha">
     <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead title="Vanessa Vieth" />
     </head>
     <body>
-        <Header />
+        <Header title="Vanessa" />
 
         <main>
-            <h1>Vanessa Vieth <img class="inline-block aspect-square w-32" src="/vanessa-vieth.jpg" alt="" /></h1>
+            <h1>
+                <img class="pointer-events-none inline-block aspect-square w-32" src="/vanessa-vieth.jpg" alt="" />
+                Vanessa Vieth
+            </h1>
             <br />
             <p>
                 LinkedIn <Link href="https://www.linkedin.com/in/vanessa-v-1421a81a7/">vanessa-v-1421a81a7</Link>
