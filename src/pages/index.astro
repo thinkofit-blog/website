@@ -36,8 +36,10 @@ const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.va
                                     <a href={`/articles/${post.slug}/`} class="hover:text-ctp-mauve">
                                         <img
                                             class="pointer-events-none rounded-lg"
-                                            width={720} height={360}
-                                            src={post.data.heroImage} alt=""
+                                            width={720}
+                                            height={360}
+                                            src={post.data.heroImage}
+                                            alt=""
                                         />
                                         <b>{post.data.title}</b>
                                         <p>
