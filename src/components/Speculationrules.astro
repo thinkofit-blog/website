@@ -1,0 +1,16 @@
+---
+
+---
+
+<script
+    is:inline
+    type="speculationrules"
+    set:html={JSON.stringify({
+        prerender: [
+            {
+                where: { href_matches: "/*" },
+                eagerness: "eager",
+            },
+        ],
+    })}
+/>

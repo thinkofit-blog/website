@@ -6,6 +6,7 @@ import Link from "../components/Link.astro"
 
 import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
+import Speculationrules from "../components/Speculationrules.astro"
 
 const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
 ---
@@ -54,5 +55,6 @@ const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.va
             </ul>
             <Footer />
         </main>
+        <Speculationrules />
     </body>
 </html>
