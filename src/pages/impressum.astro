@@ -1,0 +1,36 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import Link from "../components/Link.astro"
+---
+
+<!doctype html>
+<html lang="de" class="bg-ctp-base text-ctp-text dark:ctp-mocha">
+    <head>
+        <BaseHead title="Impressum" />
+    </head>
+    <body>
+        <Header title="Impressum" />
+
+        <main>
+            <h1>Impressum</h1>
+            <p>Verantwortlich für den Inhalt dieser Webseite:</p>
+
+            <p>
+                <strong>c/o Impressumservice Dein-Impressum</strong><br>
+                Stettiner Straße 41<br>
+                35410 Hungen<br>
+                Deutschland<br>
+                Vertreten durch: Vanessa Vieth
+            </p>
+
+            <p>
+                E-Mail: <Link href="mailto:info@ihre-seite.de">info@ihre-seite.de</Link>
+            </p>
+
+        </main>
+
+        <Footer />
+    </body>
+</html>
