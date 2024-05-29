@@ -1,9 +1,8 @@
 ---
-title: Denkst du noch oder nutzt du schon Copilot?
-short: Copilot
-description: KI hält uns davon ab, bessere Programmierer zu werden. Vielleicht hilft sie uns aber auch dabei, dass wir das gar nicht mehr müssen.
-pubDate: May 11 2024
-heroImage: /lazy_nvim.jpg
+title: "Denkst du noch oder nutzt du schon Copilot?"
+description: "KI hält uns davon ab, bessere Programmierer zu werden. Vielleicht hilft sie uns aber auch dabei, dass wir das gar nicht mehr müssen."
+pubDate: "May 29 2024"
+heroImage: "/lazy_nvim.jpg"
 ---
 
 KI hält uns davon ab, bessere Programmierer zu werden. Vielleicht hilft sie uns aber auch dabei, dass wir das gar nicht mehr müssen.
@@ -35,7 +34,7 @@ Als das “Werkzeug” Auto erfunden wurde, sind viele Kutscher innerhalb kürze
 ## Wie zuverlässig ist Copilot?
 
 Gerade wenn es um das Lernen geht, ist besorgniserregend:  
-Copilot gibt gelegentlich falsche Ergebnisse, die trotzdem funktionieren.
+Copilot gibt gelegentlich falsche Code, der trotzdem funktionieren und richtige Ergebnisse hervorbringt..
 
 Hier ist eine von Copilot falsch generierte QuickSort-Funktion. Sie sortiert zwar korrekt, implementiert aber nicht den QuickSort Algorithmus.  
 Prompt: `function quickSort(arr) {`
