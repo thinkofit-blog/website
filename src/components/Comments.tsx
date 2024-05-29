@@ -26,6 +26,15 @@ export function Comments() {
             </>
         )
     } else {
-        return <button onClick={() => signInWithRedirect(fb.auth, fb.googleAuth)}>Google</button>
+        return (
+            <ul>
+                <li>
+                    <button onClick={() => signInWithRedirect(fb.auth, fb.googleAuth)}>Google</button>
+                </li>
+                <li>
+                    <button onClick={() => signInWithRedirect(fb.auth, fb.githubAuth)}>GitHub</button>
+                </li>
+            </ul>
+        )
     }
 }
