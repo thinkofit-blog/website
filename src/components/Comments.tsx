@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from "firebase/auth"
+import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithRedirect } from "firebase/auth"
 
 const firebaseConfig = {
     apiKey: "AIzaSyB-0b4L0WNtHr6hQIzHSaUrWkD-uBloWao",
@@ -26,6 +26,6 @@ export function Comments() {
             </>
         )
     } else {
-        return <button onClick={() => signInWithPopup(fb.auth, fb.googleAuth)}>Google</button>
+        return <button onClick={() => signInWithRedirect(fb.auth, fb.googleAuth)}>Google</button>
     }
 }
