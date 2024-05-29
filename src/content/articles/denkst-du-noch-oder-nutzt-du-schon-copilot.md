@@ -1,6 +1,7 @@
 ---
 title: "Denkst du noch oder nutzt du schon Copilot?"
 description: "KI hält uns davon ab, bessere Programmierer zu werden. Vielleicht hilft sie uns aber auch dabei, dass wir das gar nicht mehr müssen."
+short: Copilot
 pubDate: "May 29 2024"
 heroImage: "/lazy_nvim.jpg"
 ---
