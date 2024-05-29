@@ -14,13 +14,13 @@ _Wir meinen mit Copilot alle Code schreibenden KIs_
 
 ## (Ver)lernen wir gerade die wichtigen Sachen?
 
-Wir Studenten bzw. Programmieranfänger müssen das Coden erst lernen. Da ist es ziemlich praktisch, dass für Studenten Copilot gratis ist, oder nicht? Wie verlockend und gefährlich das ist, haben wir hautnah miterlebt und man sollte echt über uns nachdenken.
+Wir Studenten bzw. Programmieranfänger müssen das Coden erst lernen. Da ist es ziemlich praktisch, dass für Studenten Copilot gratis ist. Wie verlockend und gefährlich das ist, haben wir hautnah miterlebt und man sollte echt über uns nachdenken.
 
 Was passiert mit jemandem, der programmieren lernt und dabei Copilot und Co verwendet? Unser Fazit: nicht viel. Die eigentlichen Lernziele bleiben aus, wenn man Copilot die Codeaufgabe machen lässt und nicht weiß, warum es funktioniert. Die 1,0 gibt es aus unserer Erfahrung oft trotzdem.
 
-Wer in einer Klausur vom Nachbarn oder einem Spickzettel abschreibt, bekommt auch eine gute Note. Bedeutet das, dass man den Stoff der Klausur beherrscht? Definitiv nicht.
+Es ist ähnlich wie jemand der in einer Klausur vom Nachbarn abschreibt und eine gute Note bekommt. Bedeutet das, dass man den Stoff der Klausur beherrscht? Definitiv nicht.
 
-Copilot ist genau so, nur schlimmer, weil nicht einmal mehr selbst abgeschrieben werden muss. Das macht Copilot für uns und es fühlt sich an, als wäre das Ergebnis aus eigener Leistung entstanden. Copilot gibt Antworten auf Fragen, bei denen man nicht weiß, dass sie wichtig sind.
+Copilot ist sogar noch schlimmer, weil nicht einmal mehr selbst abgeschrieben werden muss. Das macht Copilot für uns und es fühlt sich tortzdem an, als wäre das Ergebnis aus eigener Leistung entstanden. Copilot gibt Antworten auf Fragen, bei denen man nicht weiß, dass sie wichtig sind.
 
 ![Frank‘s Vorstellung, wie Vanessa mit Copilot arbeitet.](/lazy_nvim.jpg)
 
