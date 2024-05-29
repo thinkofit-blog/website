@@ -12,9 +12,6 @@ _Wir meinen mit Copilot alle Code schreibenden KIs_
 
 ---
 
-Wir sind Menschen. Unsere Mission: Schneller, höher, weiter.  
-Um unsere Ziele zu erreichen und den Weg zu vereinfachen, haben wir uns seit jeher Werkzeuge geschaffen. Nur, kommen wir nun durch diese von dem Weg ab, den wir eigentlich gehen wollten?
-
 ## (Ver)lernen wir gerade die wichtigen Sachen?
 
 Wir Studenten bzw. Programmieranfänger müssen das Coden erst lernen. Da ist es ziemlich praktisch, dass für Studenten Copilot gratis ist, oder nicht? Wie verlockend und gefährlich das ist, haben wir hautnah miterlebt und man sollte echt über uns nachdenken.
