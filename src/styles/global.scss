@@ -41,6 +41,10 @@ body {
     overflow-wrap: break-word;
 }
 
+main {
+    min-height: calc(100lvh - 20rem);
+}
+
 main,
 footer {
     width: 720px;

@@ -1,12 +1,13 @@
 ---
 interface Props {
     href: string
+    class?: string
 }
 const extern = Astro.props.href.startsWith("https://")
 ---
 
 <a
-    class="text-ctp-text underline hover:text-ctp-mauve"
+    class:list={["text-ctp-text underline hover:text-ctp-mauve", Astro.props.class]}
     href={Astro.props.href}
     target={extern ? "_blank" : undefined}
     rel={extern ? "noopener noreferrer nofollow" : undefined}
