@@ -37,7 +37,7 @@ const { title, short, description, pubDate, updatedDate, heroImage } = Astro.pro
                 </div>
                 <slot />
             </article>
-            <Comments />
+            <Comments client:only />
         </main>
 
         <Footer />
