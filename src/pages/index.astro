@@ -39,7 +39,7 @@ const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.va
                                             class="pointer-events-none rounded-lg"
                                             width={720}
                                             height={360}
-                                            src={post.data.heroImage}
+                                            src={post.data.heroImage.replace(/\.[a-z]+$/, ".avif")}
                                             alt=""
                                         />
                                         <b>{post.data.title}</b>
