@@ -1,0 +1,33 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import Speculationrules from "../components/Speculationrules.astro"
+
+type Props = {
+    title: string
+    short: string
+    description: string
+    heroImage?: string
+    noHeader?: boolean
+}
+
+const { title, short, description, heroImage, noHeader } = Astro.props
+---
+
+<html lang="de" class="bg-ctp-base text-ctp-text dark:ctp-mocha">
+    <head>
+        <BaseHead title={title} description={description} image={heroImage} />
+    </head>
+
+    <body>
+        {noHeader ? null : <Header title={short} />}
+
+        <main>
+            <slot />
+        </main>
+
+        <Footer />
+        <Speculationrules />
+    </body>
+</html>

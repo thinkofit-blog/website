@@ -1,40 +1,97 @@
-import { initializeApp } from "firebase/app"
-import { getAuth, GoogleAuthProvider, GithubAuthProvider, signInWithRedirect } from "firebase/auth"
+import { createClient } from "@supabase/supabase-js"
+import type { AuthSession, User } from "@supabase/supabase-js"
+import { createSignal, onMount } from "solid-js"
+import { storeAuth } from "../script/auth"
 
-const firebaseConfig = {
-    apiKey: "AIzaSyB-0b4L0WNtHr6hQIzHSaUrWkD-uBloWao",
-    authDomain: "think-of-it.firebaseapp.com",
-    projectId: "think-of-it",
-    storageBucket: "think-of-it.appspot.com",
-    messagingSenderId: "243778068084",
-    appId: "1:243778068084:web:5b8c9b7ffea1f4ba6e3b21",
+const requestUrl = new URL(location.href)
+
+const supabase = createClient(
+    "https://kzqpqtqdmhjmabwsvlts.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt6cXBxdHFkbWhqbWFid3N2bHRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTcwMTcwNzUsImV4cCI6MjAzMjU5MzA3NX0.aZ-f4rlHMapYuFk3C_92KZnOyxSbGGIgr0bCm5MdV_w",
+)
+
+;(globalThis as any).supabase = supabase
+
+async function tryLogin(searchParams: URLSearchParams) {
+    const access_token = searchParams.get("access_token")
+    if (!access_token) return
+
+    const refresh_token = searchParams.get("refresh_token")
+    if (!refresh_token) return
+
+    const authResp = await supabase.auth.setSession({ access_token, refresh_token })
+    await storeAuth(authResp)
 }
 
-const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
+if (requestUrl.hash) {
+    const url = new URL(requestUrl.origin + requestUrl.pathname + requestUrl.hash.replace(/^#/, "?"))
+    tryLogin(url.searchParams)
+}
+tryLogin(requestUrl.searchParams)
 
-const googleAuth = new GoogleAuthProvider()
-const githubAuth = new GithubAuthProvider()
-
-const fb = { app, googleAuth, githubAuth, auth }
-
-export function Comments() {
-    if (fb.auth.currentUser) {
-        return (
-            <>
-                <p>User: {fb.auth.currentUser?.displayName ?? "none"}</p>
-            </>
-        )
-    } else {
-        return (
-            <ul>
-                <li>
-                    <button onClick={() => signInWithRedirect(fb.auth, fb.googleAuth)}>Google</button>
-                </li>
-                <li>
-                    <button onClick={() => signInWithRedirect(fb.auth, fb.githubAuth)}>GitHub</button>
-                </li>
-            </ul>
-        )
+function signInWith(provider: "github" | "google") {
+    return async () => {
+        const { error } = await supabase.auth.signInWithOAuth({
+            provider,
+            options: {
+                redirectTo: requestUrl.origin + requestUrl.pathname,
+            },
+        })
+        if (error) {
+            throw error
+        }
     }
+}
+
+const signInWithGithub = signInWith("github")
+const signInWithGoogle = signInWith("google")
+
+export const Comments = () => {
+    const [user, setUser] = createSignal<User | null>(null)
+
+    onMount(async () => {
+        const {
+            data: { user },
+        } = await supabase.auth.getUser()
+        setUser(user)
+
+        supabase.auth.onAuthStateChange((_event, session: AuthSession | null) => {
+            setUser(session?.user ?? null)
+        })
+    })
+
+    async function signOut() {
+        const { error } = await supabase.auth.signOut()
+        if (error) console.error("Error logging out:", error.message)
+    }
+
+    return (
+        <div>
+            {user() ? (
+                <div>
+                    {user()!.user_metadata?.avatar_url && (
+                        <img src={user()!.user_metadata.avatar_url} alt="" width="50" />
+                    )}
+                    <p>
+                        {user()!.user_metadata?.preferred_username ||
+                            user()!.user_metadata?.name ||
+                            user()!.user_metadata?.user_name ||
+                            user()!.user_metadata?.email ||
+                            user()!.user_metadata?.full_name ||
+                            user()!.email}
+                    </p>
+                    <button onClick={signOut}>Sign Out</button>
+                </div>
+            ) : (
+                <ul>
+                    <li>
+                        <button onClick={signInWithGithub}>Login with GitHub</button>
+                    </li>
+                    <li>
+                        <button onClick={signInWithGoogle}>Login with Google</button>
+                    </li>
+                </ul>
+            )}
+        </div>
+    )
 }

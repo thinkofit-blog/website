@@ -1,28 +1,15 @@
 ---
-import BaseHead from "../components/BaseHead.astro"
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
+import Default from "../layouts/Default.astro"
 import Link from "../components/Link.astro"
 ---
 
-<!doctype html>
-<html lang="de" class="bg-ctp-base text-ctp-text dark:ctp-mocha">
-    <head>
-        <BaseHead title="Vanessa Vieth" />
-    </head>
-    <body>
-        <Header title="Vanessa" />
-
-        <main>
-            <h1>
-                <img class="pointer-events-none inline-block aspect-square w-32" src="/vanessa-vieth.avif" alt="" />
-                Vanessa&nbsp;Vieth
-            </h1>
-            <br />
-            <p>
-                LinkedIn <Link href="https://www.linkedin.com/in/vanessa-v-1421a81a7/">vanessa-v-1421a81a7</Link>
-            </p>
-        </main>
-        <Footer />
-    </body>
-</html>
+<Default title="Vanessa Vieth" short="Vanessa" description="Autor bei think.of(it);">
+    <h1>
+        <img class="pointer-events-none inline-block aspect-square w-32" src="/vanessa-vieth.avif" alt="" />
+        Vanessa&nbsp;Vieth
+    </h1>
+    <br />
+    <p>
+        LinkedIn <Link href="https://www.linkedin.com/in/vanessa-v-1421a81a7/">vanessa-v-1421a81a7</Link>
+    </p>
+</Default>
