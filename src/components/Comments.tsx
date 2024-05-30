@@ -287,7 +287,7 @@ export const Comments = () => {
                     })}
                 </ul>
             ) : (
-                <p>Noch keine Kommentare vorhanden. Sei der Erste!</p>
+                <p class="mt-4">Noch keine Kommentare vorhanden. Sei der Erste!</p>
             )}
         </div>
     )
