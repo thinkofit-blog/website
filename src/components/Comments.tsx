@@ -42,7 +42,6 @@ function signInWith(provider: "github" | "google") {
 }
 
 const signInWithGithub = signInWith("github")
-const signInWithGoogle = signInWith("google")
 
 export const Comments = () => {
     const [user, setUser] = createSignal<User | null>(null)
@@ -84,9 +83,6 @@ export const Comments = () => {
                 <ul>
                     <li>
                         <button onClick={signInWithGithub}>Login with GitHub</button>
-                    </li>
-                    <li>
-                        <button onClick={signInWithGoogle}>Login with Google</button>
                     </li>
                 </ul>
             )}
