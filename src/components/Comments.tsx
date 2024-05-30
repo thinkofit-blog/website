@@ -95,11 +95,12 @@ export const Comments = () => {
                 <div>
                     <p>Melde dich an, um einen Kommentar auf diesem Artikel zu hinterlassen.</p>
                     <p>
-                        Wir verwenden Cookies, um Anmeldeinformationen zu speichern. Wenn Sie sich nicht anmelden,
-                        werden keine Cookies gespeichert. Weitere Informationen finden Sie in der{" "}
+                        Wir verwenden Cookies, um Anmeldeinformationen zu speichern. Wenn Du dich nicht anmeldest,
+                        werden keine Cookies gespeichert. Weitere Informationen findest Du in der{" "}
                         <a href="/privacy-policy" class="text-ctp-text underline hover:text-ctp-mauve">
                             Datenschutzerklärung
                         </a>
+                        {"."}
                     </p>
                     <h3>Anmelden mit</h3>
                     <ul>
