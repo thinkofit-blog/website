@@ -286,7 +286,9 @@ export const Comments = () => {
                         )
                     })}
                 </ul>
-            ) : null}
+            ) : (
+                <p>Noch keine Kommentare vorhanden. Sei der Erste!</p>
+            )}
         </div>
     )
 }
