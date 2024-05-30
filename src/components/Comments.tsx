@@ -11,6 +11,13 @@ const supabase = createClient(
 
 ;(globalThis as any).supabase = supabase
 
+type comment = {
+    created_at: Date
+    user: any
+    post: string
+    content: string
+}
+
 async function tryLogin(searchParams: URLSearchParams) {
     const access_token = searchParams.get("access_token")
     if (!access_token) return
@@ -45,7 +52,9 @@ const signInWithGithub = signInWith("github")
 const signInWithLinkedin = signInWith("linkedin_oidc")
 
 export const Comments = () => {
-    const [user, setUser] = createSignal<User | null>(null)
+    const [getUser, setUser] = createSignal<User | null>(null)
+    const [getComments, setComments] = createSignal<comment[]>([])
+    const [getComment, setComment] = createSignal<string>("")
 
     onMount(async () => {
         const {
@@ -56,6 +65,18 @@ export const Comments = () => {
         supabase.auth.onAuthStateChange((_event, session: AuthSession | null) => {
             setUser(session?.user ?? null)
         })
+
+        const { data: comments, error: err } = await supabase
+            .from("comments")
+            .select("created_at, user, post, content")
+            .order("created_at", { ascending: false })
+            .limit(64)
+        if (err) {
+            console.error(err)
+        }
+        if (comments) {
+            setComments(comments)
+        }
     })
 
     async function signOut() {
@@ -65,31 +86,61 @@ export const Comments = () => {
 
     return (
         <div class="rounded-md border border-ctp-overlay0 p-2">
-            {user() ? (
-                <div class="group flex flex-row flex-wrap items-center justify-between gap-2">
-                    <img
-                        class="block aspect-square h-10 w-10"
-                        src={user()!.user_metadata.avatar_url ?? user()!.user_metadata.picture ?? ""}
-                        alt=""
-                        width="50"
-                        loading="lazy"
-                        decoding="async"
-                    />
-                    <span class="block h-fit text-sm">
-                        {user()!.user_metadata?.preferred_username ||
-                            user()!.user_metadata?.name ||
-                            user()!.user_metadata?.user_name ||
-                            user()!.user_metadata?.email ||
-                            user()!.user_metadata?.full_name ||
-                            user()!.email}
-                    </span>
+            {getUser() ? (
+                <>
+                    <div class="group flex flex-row flex-wrap items-center justify-between gap-2">
+                        <img
+                            class="block aspect-square h-10 w-10"
+                            src={getUser()!.user_metadata.avatar_url ?? getUser()!.user_metadata.picture ?? ""}
+                            alt=""
+                            width="50"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <span class="block h-fit text-sm">
+                            {getUser()!.user_metadata?.preferred_username ||
+                                getUser()!.user_metadata?.name ||
+                                getUser()!.user_metadata?.user_name ||
+                                getUser()!.user_metadata?.email ||
+                                getUser()!.user_metadata?.full_name ||
+                                getUser()!.email}
+                        </span>
+                        <button
+                            class="block h-fit rounded-md bg-ctp-red px-2 py-1 text-sm text-ctp-base md:invisible md:group-hover:visible"
+                            onClick={signOut}
+                        >
+                            Abmelden
+                        </button>
+                    </div>
+                    <label class="w-full">
+                        Schreibe ein Kommentar
+                        <br />
+                        <textarea
+                            value={getComment()}
+                            class="h-24 w-full resize-none rounded-md bg-ctp-crust text-ctp-text"
+                            onChange={(x) => {
+                                setComment(x.currentTarget.value)
+                            }}
+                        />
+                    </label>
                     <button
-                        class="block h-fit rounded-md bg-ctp-red px-2 py-1 text-sm text-ctp-base md:invisible md:group-hover:visible"
-                        onClick={signOut}
+                        class="rounded-md bg-ctp-text px-2 py-1 text-ctp-base"
+                        onClick={async () => {
+                            const resp = await supabase.from("comments").insert({
+                                post: location.pathname,
+                                content: getComment(),
+                            })
+                            if (resp.error) {
+                                console.error(resp.error)
+                                alert(resp.statusText + "\n" + resp.error.message || JSON.stringify(resp.error))
+                            } else {
+                                setComment("")
+                            }
+                        }}
                     >
-                        Abmelden
+                        Absenden
                     </button>
-                </div>
+                </>
             ) : (
                 <div>
                     <p>Melde dich an, um einen Kommentar auf diesem Artikel zu hinterlassen.</p>
@@ -116,6 +167,11 @@ export const Comments = () => {
                     </ul>
                 </div>
             )}
+            {getComments().map((comment) => (
+                <pre>
+                    <code>{JSON.stringify(comment)}</code>
+                </pre>
+            ))}
         </div>
     )
 }
