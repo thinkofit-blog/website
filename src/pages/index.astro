@@ -5,6 +5,7 @@ import Link from "../components/Link.astro"
 
 import { getCollection } from "astro:content"
 import FormattedDate from "../components/FormattedDate.astro"
+import { SupabaseLogin } from "../components/SupabaseLogin"
 
 const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
 ---
@@ -45,4 +46,5 @@ const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.va
             }
         </ul>
     </section>
+    <SupabaseLogin client:only="solid-js" />
 </Default>
