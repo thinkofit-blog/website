@@ -17,12 +17,6 @@
     font-display: swap;
 }
 
-:root,
-body,
-main {
-    font-size: 20px;
-}
-
 @media screen and (prefers-color-scheme: dark) {
     p > code,
     article > pre {
@@ -48,9 +42,9 @@ main {
 main,
 footer {
     width: 720px;
-    max-width: calc(100% - 2rem);
+    max-width: calc(100vw - 1rem);
     margin: auto;
-    padding: 3rem 1rem;
+    padding: 3rem 0.5rem;
 }
 
 article {
@@ -159,13 +153,10 @@ hr {
     }
 }
 
-@media (max-width: 720px) {
-    body {
-        font-size: 18px;
-    }
-    main {
-        padding: 1rem;
-    }
+input,
+textarea {
+    border: none;
+    outline: none;
 }
 
 ::-webkit-scrollbar {
