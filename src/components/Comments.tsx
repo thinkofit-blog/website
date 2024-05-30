@@ -94,10 +94,18 @@ export const Comments = () => {
             ) : (
                 <div>
                     <p>Melde dich an, um einen Kommentar auf diesem Artikel zu hinterlassen.</p>
+                    <p>
+                        Wir verwenden Cookies, um Anmeldeinformationen zu speichern. Wenn Sie sich nicht anmelden,
+                        werden keine Cookies gespeichert. Weitere Informationen finden Sie in der{" "}
+                        <a href="/privacy-policy" class="text-ctp-text underline hover:text-ctp-mauve">
+                            Datenschutzerklärung
+                        </a>
+                    </p>
+                    <h3>Anmelden mit</h3>
                     <ul>
                         <li>
                             <button class="rounded-md bg-ctp-mauve px-2 py-1 text-ctp-base" onClick={signInWithGithub}>
-                                Mit GitHub anmelden
+                                GitHub
                             </button>
                         </li>
                     </ul>
