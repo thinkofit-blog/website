@@ -63,28 +63,45 @@ export const Comments = () => {
     }
 
     return (
-        <div>
+        <div class="rounded-md border border-ctp-overlay0 p-2">
             {user() ? (
-                <div>
+                <div class="group flex flex-row flex-wrap items-center justify-between gap-2">
                     {user()!.user_metadata?.avatar_url && (
-                        <img src={user()!.user_metadata.avatar_url} alt="" width="50" />
+                        <img
+                            class="block aspect-square h-10 w-10"
+                            src={user()!.user_metadata.avatar_url}
+                            alt=""
+                            width="50"
+                            loading="lazy"
+                            decoding="async"
+                        />
                     )}
-                    <p>
+                    <span class="block h-fit text-sm">
                         {user()!.user_metadata?.preferred_username ||
                             user()!.user_metadata?.name ||
                             user()!.user_metadata?.user_name ||
                             user()!.user_metadata?.email ||
                             user()!.user_metadata?.full_name ||
                             user()!.email}
-                    </p>
-                    <button onClick={signOut}>Sign Out</button>
+                    </span>
+                    <button
+                        class="block h-fit rounded-md bg-ctp-red px-2 py-1 text-sm text-ctp-base md:invisible md:group-hover:visible"
+                        onClick={signOut}
+                    >
+                        Abmelden
+                    </button>
                 </div>
             ) : (
-                <ul>
-                    <li>
-                        <button onClick={signInWithGithub}>Login with GitHub</button>
-                    </li>
-                </ul>
+                <div>
+                    <p>Melde dich an, um einen Kommentar auf diesem Artikel zu hinterlassen.</p>
+                    <ul>
+                        <li>
+                            <button class="rounded-md bg-ctp-mauve px-2 py-1 text-ctp-base" onClick={signInWithGithub}>
+                                Mit GitHub anmelden
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             )}
         </div>
     )
