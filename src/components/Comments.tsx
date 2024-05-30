@@ -1,7 +1,6 @@
 import { createClient } from "@supabase/supabase-js"
 import type { AuthSession, User } from "@supabase/supabase-js"
 import { createSignal, onMount } from "solid-js"
-import { storeAuth } from "../script/auth"
 
 const requestUrl = new URL(location.href)
 
@@ -19,8 +18,7 @@ async function tryLogin(searchParams: URLSearchParams) {
     const refresh_token = searchParams.get("refresh_token")
     if (!refresh_token) return
 
-    const authResp = await supabase.auth.setSession({ access_token, refresh_token })
-    await storeAuth(authResp)
+    await supabase.auth.setSession({ access_token, refresh_token })
 }
 
 if (requestUrl.hash) {
