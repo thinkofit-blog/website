@@ -27,7 +27,7 @@ if (requestUrl.hash) {
 }
 tryLogin(requestUrl.searchParams)
 
-function signInWith(provider: "github" | "google") {
+function signInWith(provider: "github" | "google" | "linkedin_oidc") {
     return async () => {
         const { error } = await supabase.auth.signInWithOAuth({
             provider,
@@ -42,6 +42,7 @@ function signInWith(provider: "github" | "google") {
 }
 
 const signInWithGithub = signInWith("github")
+const signInWithLinkedin = signInWith("linkedin_oidc")
 
 export const Comments = () => {
     const [user, setUser] = createSignal<User | null>(null)
@@ -66,16 +67,14 @@ export const Comments = () => {
         <div class="rounded-md border border-ctp-overlay0 p-2">
             {user() ? (
                 <div class="group flex flex-row flex-wrap items-center justify-between gap-2">
-                    {user()!.user_metadata?.avatar_url && (
-                        <img
-                            class="block aspect-square h-10 w-10"
-                            src={user()!.user_metadata.avatar_url}
-                            alt=""
-                            width="50"
-                            loading="lazy"
-                            decoding="async"
-                        />
-                    )}
+                    <img
+                        class="block aspect-square h-10 w-10"
+                        src={user()!.user_metadata.avatar_url ?? user()!.user_metadata.picture ?? ""}
+                        alt=""
+                        width="50"
+                        loading="lazy"
+                        decoding="async"
+                    />
                     <span class="block h-fit text-sm">
                         {user()!.user_metadata?.preferred_username ||
                             user()!.user_metadata?.name ||
@@ -103,10 +102,15 @@ export const Comments = () => {
                         {"."}
                     </p>
                     <h3>Anmelden mit</h3>
-                    <ul>
+                    <ul class="flex flex-row flex-wrap gap-2">
                         <li>
                             <button class="rounded-md bg-ctp-mauve px-2 py-1 text-ctp-base" onClick={signInWithGithub}>
                                 GitHub
+                            </button>
+                        </li>
+                        <li>
+                            <button class="rounded-md bg-ctp-blue px-2 py-1 text-ctp-base" onClick={signInWithLinkedin}>
+                                LinkedIn
                             </button>
                         </li>
                     </ul>
