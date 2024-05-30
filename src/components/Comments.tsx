@@ -135,14 +135,7 @@ export const Comments = () => {
             {getUser() ? (
                 <>
                     <div class="group flex flex-row flex-wrap items-center justify-between gap-2">
-                        <img
-                            class="block aspect-square h-10 w-10 rounded-md"
-                            src={getUserAvatar(getUser()!)}
-                            alt=""
-                            width="50"
-                            loading="lazy"
-                            decoding="async"
-                        />
+                        <ProfileImage src={getUserAvatar(getUser()!)} />
                         <span class="block h-fit text-sm">{getUserName(getUser()!)}</span>
                         <button
                             class="block h-fit rounded-md bg-ctp-red px-2 py-1 text-sm text-ctp-base md:invisible md:group-hover:visible"
@@ -152,8 +145,9 @@ export const Comments = () => {
                         </button>
                     </div>
                     <label class="w-full">
-                        Schreibe ein Kommentar {getComment() ? `(${getComment().length}/280)` : null}
-                        <br />
+                        <p class="my-2">
+                            Schreibe ein Kommentar {getComment() ? `(${getComment().length}/280)` : null}
+                        </p>
                         <textarea
                             value={getComment()}
                             class="h-24 w-full resize-none rounded-md bg-ctp-crust px-2 py-1 text-ctp-text"
@@ -272,13 +266,7 @@ export const Comments = () => {
                         return (
                             <li class="my-1">
                                 <div class="flex flex-row">
-                                    <img
-                                        src={comment.userAvatar ?? ""}
-                                        alt=""
-                                        loading="lazy"
-                                        decoding="async"
-                                        class="block aspect-square h-6 w-6 rounded-md"
-                                    />
+                                    <ProfileImage src={comment.userAvatar ?? ""} />
                                     <span>{comment.userName}</span>
                                 </div>
                                 <p class="block">{comment.content}</p>
@@ -290,5 +278,38 @@ export const Comments = () => {
                 <p class="mt-4">Noch keine Kommentare vorhanden. Sei der Erste!</p>
             )}
         </div>
+    )
+}
+
+function ProfileImage(props: { src: string | null | undefined }) {
+    const [getShowImg, setShowImg] = createSignal<boolean>(!!props.src)
+
+    return (
+        <>
+            {getShowImg() ? (
+                <img
+                    src={props.src!}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    class="block aspect-square h-6 w-6 rounded-md"
+                    onError={() => {
+                        setShowImg(false)
+                    }}
+                />
+            ) : (
+                <svg
+                    class="block aspect-square h-6 w-6"
+                    width="64"
+                    height="64"
+                    viewBox="0 0 64 64"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M0 63.9998C0 21.3334 64 21.3334 64 64L0 63.9998Z" class="fill-ctp-subtext0" />
+                    <circle cx="32" cy="16" r="16" class="fill-ctp-subtext0" />
+                </svg>
+            )}
+        </>
     )
 }
