@@ -131,9 +131,9 @@ export const Comments = () => {
     }
 
     return (
-        <div class="rounded-md border border-ctp-overlay0 p-2">
+        <div>
             {getUser() ? (
-                <>
+                <div class="print:hidden">
                     <div class="group flex flex-row flex-wrap items-center justify-between gap-2">
                         <ProfileImage src={getUserAvatar(getUser()!)} />
                         <span class="block h-fit text-sm">{getUserName(getUser()!)}</span>
@@ -233,9 +233,9 @@ export const Comments = () => {
                     >
                         Absenden
                     </button>
-                </>
+                </div>
             ) : (
-                <div>
+                <div class="print:hidden">
                     <p>Melde dich an, um einen Kommentar auf diesem Artikel zu hinterlassen.</p>
                     <p>
                         Wir verwenden Cookies, um Anmeldeinformationen zu speichern. Wenn Du dich nicht anmeldest,

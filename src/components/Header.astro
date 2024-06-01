@@ -8,7 +8,7 @@ const title = Astro.props.title ? `think.of("${Astro.props.title}")` : SITE_TITL
 ---
 
 <header>
-    <nav class="fixed left-0 top-0 mb-4 flex w-full flex-col bg-ctp-crust px-4 py-2">
+    <nav class="fixed left-0 top-0 mb-4 flex w-full flex-col bg-ctp-crust px-4 py-2 print:absolute">
         <a href="/" class="font-mono text-xl hover:text-ctp-mauve">{title}</a>
     </nav>
     <div class="block h-10"></div>
