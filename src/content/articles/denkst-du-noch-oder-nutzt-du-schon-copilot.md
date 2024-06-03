@@ -22,7 +22,8 @@ Es ist ähnlich wie jemand der in einer Klausur vom Nachbarn abschreibt und eine
 
 Copilot ist sogar noch schlimmer, weil nicht einmal mehr selbst abgeschrieben werden muss. Das macht Copilot für uns und es fühlt sich tortzdem an, als wäre das Ergebnis aus eigener Leistung entstanden. Copilot gibt Antworten auf Fragen, bei denen man nicht weiß, dass sie wichtig sind.
 
-![Frank‘s Vorstellung, wie Vanessa mit Copilot arbeitet.](/lazy_nvim.avif)
+![Entspannter Entwickler, der die Füße hochlegt und Copilot bei der Arbeit zusieht](/lazy_nvim.avif)
+_Frank‘s Vorstellung, wie Vanessa mit Copilot arbeitet._
 
 Wodurch lernt man programmieren? Durch Ausprobieren und möglichst viele Fehler machen. Unsere These ist, dass Copilot uns daran hindert, die Fehler zu machen, die wir als Transferleistung zum Lösen weiterführender Probleme benötigen.
 
