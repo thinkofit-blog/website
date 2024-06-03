@@ -9,8 +9,8 @@ type Props = CollectionEntry<"articles">["data"]
 const { title, pubDate, updatedDate } = Astro.props
 ---
 
-<Default {...Astro.props}>
-    <article>
+<Default {...Astro.props} article>
+    <article itemscope itemtype="https://schema.org/article">
         <div>
             <div>
                 <FormattedDate date={pubDate} />
@@ -22,7 +22,7 @@ const { title, pubDate, updatedDate } = Astro.props
                     )
                 }
             </div>
-            <h1>{title}</h1>
+            <h1 itemprop="name">{title}</h1>
         </div>
         <slot />
     </article>

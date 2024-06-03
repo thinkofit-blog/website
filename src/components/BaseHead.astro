@@ -6,11 +6,12 @@ interface Props {
     title?: string
     description?: string
     image?: string | undefined
+    article?: boolean
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/placeholder.png" } = Astro.props
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/placeholder.png", article = false } = Astro.props
 ---
 
 <meta name="darkreader-lock" />
@@ -22,8 +23,20 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/placeholde
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/fonts/JetBrainsMono-Bold.woff2" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/JetBrainsMono-Regular.woff2" as="font" type="font/woff" crossorigin />
+<link
+    rel="preload"
+    href={new URL("/fonts/JetBrainsMono-Bold.woff2", Astro.url)}
+    as="font"
+    type="font/woff"
+    crossorigin
+/>
+<link
+    rel="preload"
+    href={new URL("/fonts/JetBrainsMono-Regular.woff2", Astro.url)}
+    as="font"
+    type="font/woff"
+    crossorigin
+/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -34,7 +47,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/placeholde
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={article ? "article" : "website"} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
