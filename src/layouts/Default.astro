@@ -10,14 +10,15 @@ type Props = {
     description: string
     heroImage?: string
     noHeader?: boolean
+    article?: boolean
 }
 
-const { title, short, description, heroImage, noHeader } = Astro.props
+const { title, short, description, heroImage, noHeader, article = false } = Astro.props
 ---
 
 <html lang="de" class="bg-ctp-base text-ctp-text dark:ctp-mocha">
     <head>
-        <BaseHead title={title} description={description} image={heroImage} />
+        <BaseHead title={title} description={description} image={heroImage} article={article} />
     </head>
 
     <body>
