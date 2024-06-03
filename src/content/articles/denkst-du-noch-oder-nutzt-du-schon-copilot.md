@@ -2,7 +2,7 @@
 title: "Denkst du noch oder nutzt du schon Copilot?"
 description: "KI hält uns davon ab, bessere Programmierer zu werden. Vielleicht hilft sie uns aber auch dabei, dass wir das gar nicht mehr müssen."
 short: Copilot
-pubDate: "May 29 2024"
+pubDate: "Jun 03 2024"
 heroImage: "/lazy_nvim.jpg"
 ---
 
@@ -26,15 +26,15 @@ Copilot ist sogar noch schlimmer, weil nicht einmal mehr selbst abgeschrieben we
 
 Wodurch lernt man programmieren? Durch Ausprobieren und möglichst viele Fehler machen. Unsere These ist, dass Copilot uns daran hindert, die Fehler zu machen, die wir als Transferleistung zum Lösen weiterführender Probleme benötigen.
 
-Aber ist das vielleicht der neue Skill, der in Zukunft gebraucht wird? Halten wir zu sehr an gewohnten, “alten” Sachen fest? Vielleicht ist es in der Zukunft einfach wichtiger, sich auf das Gesamtbild zu konzentrieren und die Schritte dorthin gut formulieren zu können.  
+Aber ist das vielleicht der neue Skill, der in Zukunft gebraucht wird? Halten wir zu sehr an gewohnten, “alten” Sachen fest? Vielleicht ist es in der Zukunft einfach wichtiger, sich auf das Gesamtbild zu konzentrieren und die Schritte dorthin gut formulieren zu können.
 Als das “Werkzeug” Auto erfunden wurde, sind viele Kutscher innerhalb kürzester Zeit arbeitslos geworden. Und das klassische “Programmieren” ist vielleicht das Kutschen-fahren, was in unbestimmter Zukunft abgelöst wird.
 
 ## Wie zuverlässig ist Copilot?
 
-Gerade wenn es um das Lernen geht, ist besorgniserregend:  
+Gerade wenn es um das Lernen geht, ist besorgniserregend:
 Copilot gibt gelegentlich falsche Code, der trotzdem funktionieren und richtige Ergebnisse hervorbringt..
 
-Hier ist eine von Copilot falsch generierte QuickSort-Funktion. Sie sortiert zwar korrekt, implementiert aber nicht den QuickSort Algorithmus.  
+Hier ist eine von Copilot falsch generierte QuickSort-Funktion. Sie sortiert zwar korrekt, implementiert aber nicht den QuickSort Algorithmus.
 Prompt: `function quickSort(arr) {`
 
 ```js
@@ -65,12 +65,12 @@ Demnach ist anzunehmen, dass viel öffentlicher Code auf GitHub von unerfahrenen
 
 ## Zerstört Copilot unsere Selbstkritik?
 
-[Eine Studie](https://arxiv.org/abs/2211.03622) hat gezeigt:  
+[Eine Studie](https://arxiv.org/abs/2211.03622) hat gezeigt:
 Menschen, welche Zugang zu AI Assistants hatten, produzierten Code mit Sicherheitslücken und empfanden diesen als sicher. Menschen, keinen Zugang hatten empfanden ihren Code als unsicher, in Realität hatte dieser jedoch signifikant weniger Sicherheitslücken.
 
 Das zeigt: Copilot macht uns zum Copiloten. Dabei ist Copilot nicht in der Lage, vorauszudenken und künftig wahrscheinliche Anforderungen in die Architektur einzubeziehen.
 
-Ein weiterer Punkt ist, mit Copilot kommt man bis zu einem gewissen Grad. Danach müssen Menschen übernehmen, die die Details wirklich kennen. Wenn Copilot einfache Aufgaben selbstständig lösen kann, besteht die Gefahr, dass viele junge Entwickler die Eigenheiten von so manchen Problemen gar nicht erst lernen.  
+Ein weiterer Punkt ist, mit Copilot kommt man bis zu einem gewissen Grad. Danach müssen Menschen übernehmen, die die Details wirklich kennen. Wenn Copilot einfache Aufgaben selbstständig lösen kann, besteht die Gefahr, dass viele junge Entwickler die Eigenheiten von so manchen Problemen gar nicht erst lernen.
 Das, gepaart mit dem oben erwähnten Phänomen des unkritischen Umgangs mit generierten Codes, führt zur Frage: Wie sollen diese dann mit den Problemen zurechtkommen, bei denen Copilot nicht helfen kann?
 
 Um positiv abzuschließen: Durch Copilot haben wir das Potential durch neue Denkweisen andere (und potentiell größere) Probleme zu lösen. Wichtig dabei ist, dass wir dabei nicht mit dem Denken aufhören.
@@ -89,7 +89,7 @@ Noch müssen wir selbst besser im Programmieren werden, jedoch nimmt uns Copilot
 
 Wir sehen da auch die Verantwortung in der Gesellschaft, das angesteuerte Ziel nicht aus den Augen zu verlieren. Wir hoffen, wir finden zusammen auch bald raus, was das im Kontext von KI eigentlich ist.
 
-Zum Glück heißt es ja, der Weg ist das Ziel.  
+Zum Glück heißt es ja, der Weg ist das Ziel.
 Und davon haben wir noch mehr als genug vor uns.
 
 Written by real humans.
