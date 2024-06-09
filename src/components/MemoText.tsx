@@ -12,6 +12,7 @@ type Props = {
 export function MemoText(props: Props): JSX.Element {
     const localStorageKey = `MemoText.value(${props.key})`;
     const [getText, setText] = props.value ?? createSignal<string>(localStorage.getItem(localStorageKey) ?? "");
+    const [getIntervalId, setIntervalId] = createSignal<number>(-1);
 
     const handleTextChange: JSX.InputEventHandlerUnion<HTMLTextAreaElement, InputEvent> = (e) => {
         const target = e.target as HTMLTextAreaElement;
@@ -27,15 +28,23 @@ export function MemoText(props: Props): JSX.Element {
         if (savedText !== null) {
             setText(savedText);
         }
-        setInterval(() => {
-            if (getText().length === 0) {
-                localStorage.removeItem(localStorageKey);
-            }
-        }, 1000);
+        if (getIntervalId() !== -1) {
+            window.clearInterval(getIntervalId());
+        }
+        setIntervalId(
+            window.setInterval(() => {
+                if (getText().length === 0) {
+                    localStorage.removeItem(localStorageKey);
+                }
+            }, 1000),
+        );
     });
 
     onCleanup(() => {
         localStorage.setItem(localStorageKey, getText());
+        if (getIntervalId() !== -1) {
+            window.clearInterval(getIntervalId());
+        }
     });
 
     return (
