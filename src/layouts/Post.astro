@@ -1,12 +1,12 @@
 ---
-import Default from "./Default.astro"
-import type { CollectionEntry } from "astro:content"
-import FormattedDate from "../components/FormattedDate.astro"
-import { Comments } from "../components/Comments.tsx"
+import type { CollectionEntry } from "astro:content";
+import { Comments } from "../components/Comments.tsx";
+import FormattedDate from "../components/FormattedDate.astro";
+import Default from "./Default.astro";
 
-type Props = CollectionEntry<"articles">["data"]
+type Props = CollectionEntry<"articles">["data"];
 
-const { title, pubDate, updatedDate } = Astro.props
+const { title, pubDate, updatedDate } = Astro.props;
 ---
 
 <Default {...Astro.props} article>

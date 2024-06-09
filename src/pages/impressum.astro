@@ -1,9 +1,13 @@
 ---
-import Default from "../layouts/Default.astro"
-import Link from "../components/Link.astro"
+import Link from "../components/Link.astro";
+import Default from "../layouts/Default.astro";
 ---
 
-<Default title="Impressum" short="Impressum" description="Kontaktiere think.of(it);">
+<Default
+    title="Impressum"
+    short="Impressum"
+    description="Kontaktiere think.of(it);"
+>
     <h1>Impressum</h1>
     <p>Verantwortlich für den Inhalt dieser Webseite:</p>
 
@@ -16,6 +20,8 @@ import Link from "../components/Link.astro"
     </p>
 
     <p>
-        E-Mail: <Link href="mailto:hello@thinkofit.blog">hello@thinkofit.blog</Link>
+        E-Mail: <Link href="mailto:hello@thinkofit.blog"
+            >hello@thinkofit.blog</Link
+        >
     </p>
 </Default>

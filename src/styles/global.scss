@@ -9,6 +9,7 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
     font-family: "JetBrains Mono";
     src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff");
@@ -22,6 +23,7 @@
     article > pre {
         background-color: #11111b !important;
     }
+
     article {
         a:hover {
             color: #cba6f7;
@@ -47,6 +49,12 @@ footer {
     padding: 3rem 0.5rem;
 }
 
+a {
+    &:hover {
+        color: #8839ef;
+    }
+}
+
 article {
     a {
         text-decoration: underline;
@@ -70,24 +78,27 @@ h4,
 h5,
 h6 {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1rem;
     padding-top: 2.5rem;
     line-height: 1.2;
     font-weight: 700;
 }
+
 h1 {
     font-size: 2.5rem;
 }
+
 h2 {
     font-size: 1.5rem;
 }
+
 h3 {
     font-size: 1.25rem;
 }
+
 h4,
 h5,
 h6 {
-    font-size: 1.125rem;
     font-size: 1rem;
 }
 
@@ -96,11 +107,6 @@ b {
     font-weight: 700;
 }
 
-a {
-    &:hover {
-        color: #8839ef;
-    }
-}
 
 p,
 ul,
@@ -140,7 +146,7 @@ pre > code {
 blockquote {
     border-left: 4px solid #8839ef;
     padding: 0 0 0 20px;
-    margin: 0px;
+    margin: 0;
     font-size: 1.333rem;
 }
 
@@ -162,33 +168,41 @@ textarea {
 ::-webkit-scrollbar {
     width: 1rem;
 }
+
 ::-webkit-scrollbar-track,
 ::-webkit-resizer,
 ::-webkit-scrollbar-corner {
     background: #dce0e8;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #ccd0da;
+
     &:hover {
         background: #acb0be;
     }
 }
+
 ::selection {
     color: #dce0e8;
     background: #7287fd;
 }
+
 @media screen and (prefers-color-scheme: dark) {
     ::-webkit-scrollbar-track,
     ::-webkit-resizer,
     ::-webkit-scrollbar-corner {
         background: #11111b;
     }
+
     ::-webkit-scrollbar-thumb {
         background: #313244;
+
         &:hover {
             background: #585b70;
         }
     }
+
     ::selection {
         color: #11111b;
         background: #b4befe;
@@ -202,9 +216,11 @@ textarea {
         &.toc-item-h2 {
             margin-left: 1rem;
         }
+
         &.toc-item-h3 {
             margin-left: 1.5rem;
         }
+
         &.toc-item-h4 {
             margin-left: 2rem;
         }
