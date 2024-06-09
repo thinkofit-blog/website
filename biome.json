@@ -62,6 +62,7 @@
         "globals": ["Astro"]
     },
     "css": {
+        "linter": { "enabled": true },
         "formatter": {
             "enabled": true,
             "indentStyle": "space",
