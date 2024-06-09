@@ -1,17 +1,17 @@
 ---
-import "../styles/global.scss"
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"
+import "../styles/global.scss";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 interface Props {
-    title?: string
-    description?: string
-    image?: string | undefined
-    article?: boolean
+    title?: string;
+    description?: string;
+    image?: string | undefined;
+    article?: boolean;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/placeholder.png", article = false } = Astro.props
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/placeholder.png", article = false } = Astro.props;
 ---
 
 <meta name="darkreader-lock" />
@@ -40,7 +40,7 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/placeholde
 />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+<link rel="canonical" href={canonicalUrl} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

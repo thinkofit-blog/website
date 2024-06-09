@@ -1,20 +1,35 @@
 ---
-import Link from "../../components/Link.astro"
-import Default from "../../layouts/Default.astro"
+import Link from "../../components/Link.astro";
+import Default from "../../layouts/Default.astro";
 ---
 
-<Default title="Frank Mayer" short="Frank" description="Autor bei think.of(it); und Software Engineer">
+<Default
+    title="Frank Mayer"
+    short="Frank"
+    description="Autor bei think.of(it); und Software Engineer"
+>
     <h1>
-        <img class="pointer-events-none inline-block aspect-square w-32" src="/frank-mayer.avif" alt="" />
+        <img
+            class="pointer-events-none inline-block aspect-square w-32"
+            src="/frank-mayer.avif"
+            alt=""
+        />
         Frank&nbsp;Mayer
     </h1>
     <br />
     <p>
-        Software Engineer @ <Link href="https://www.dynabase.de">dynabase&nbsp;Technologies&nbsp;GmbH</Link>
+        Software Engineer @ <Link href="https://www.dynabase.de"
+            >dynabase&nbsp;Technologies&nbsp;GmbH</Link
+        >
     </p>
     <p>Homepage <Link href="https://frankmayer.dev">frankmayer.dev</Link></p>
-    <p>GitHub <Link href="https://github.com/tsukinoko-kun">tsukinoko-kun</Link></p>
     <p>
-        LinkedIn <Link href="https://www.linkedin.com/in/frank-mayer-de/">frank-mayer-de</Link>
+        GitHub <Link href="https://github.com/tsukinoko-kun">tsukinoko-kun</Link
+        >
+    </p>
+    <p>
+        LinkedIn <Link href="https://www.linkedin.com/in/frank-mayer-de/"
+            >frank-mayer-de</Link
+        >
     </p>
 </Default>
