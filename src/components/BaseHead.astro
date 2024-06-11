@@ -11,16 +11,22 @@ interface Props {
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, image = "/placeholder.png", article = false } = Astro.props;
+const {
+    title = SITE_TITLE,
+    description = SITE_DESCRIPTION,
+    image = "/images/placeholder.png",
+    article = false,
+} = Astro.props;
 ---
 
 <meta name="darkreader-lock" />
 <link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="manifest" href="/app.webmanifest" />
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->

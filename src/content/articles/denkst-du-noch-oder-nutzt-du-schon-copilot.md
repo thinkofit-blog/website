@@ -3,7 +3,7 @@ title: "Denkst du noch oder nutzt du schon Copilot?"
 description: "KI hält uns davon ab, bessere Programmierer zu werden. Vielleicht hilft sie uns aber auch dabei, dass wir das gar nicht mehr müssen."
 short: Copilot
 pubDate: "Jun 03 2024"
-heroImage: "/lazy_nvim.jpg"
+heroImage: "lazy_nvim"
 ---
 
 KI hält uns davon ab, bessere Programmierer zu werden. Vielleicht hilft sie uns aber auch dabei, dass wir das gar nicht mehr müssen.
@@ -22,7 +22,7 @@ Es ist ähnlich wie jemand der in einer Klausur vom Nachbarn abschreibt und eine
 
 Copilot ist sogar noch schlimmer, weil nicht einmal mehr selbst abgeschrieben werden muss. Das macht Copilot für uns und es fühlt sich tortzdem an, als wäre das Ergebnis aus eigener Leistung entstanden. Copilot gibt Antworten auf Fragen, bei denen man nicht weiß, dass sie wichtig sind.
 
-![Entspannter Entwickler, der die Füße hochlegt und Copilot bei der Arbeit zusieht](/lazy_nvim.avif)
+![Entspannter Entwickler, der die Füße hochlegt und Copilot bei der Arbeit zusieht](/images/lazy_nvim.avif)
 _Frank‘s Vorstellung, wie Vanessa mit Copilot arbeitet._
 
 Wodurch lernt man programmieren? Durch Ausprobieren und möglichst viele Fehler machen. Unsere These ist, dass Copilot uns daran hindert, die Fehler zu machen, die wir als Transferleistung zum Lösen weiterführender Probleme benötigen.

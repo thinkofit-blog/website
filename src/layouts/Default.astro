@@ -21,7 +21,7 @@ const { title, short, description, heroImage, noHeader, article = false } = Astr
         <BaseHead
             title={title}
             description={description}
-            image={heroImage}
+            image={heroImage ? `/images/${heroImage}.jpg` : undefined}
             article={article}
         />
     </head>
