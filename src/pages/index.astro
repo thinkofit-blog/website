@@ -5,7 +5,6 @@ import Default from "../layouts/Default.astro";
 
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
-import { SupabaseLogin } from "../components/SupabaseLogin";
 
 const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
@@ -41,10 +40,7 @@ const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.va
                                 class="pointer-events-none rounded-lg"
                                 width={720}
                                 height={360}
-                                src={post.data.heroImage.replace(
-                                    /\.[a-z]+$/,
-                                    ".avif",
-                                )}
+                                src={`/images/${post.data.heroImage}.avif`}
                                 alt=""
                             />
                             <b>{post.data.title}</b>
@@ -57,5 +53,5 @@ const posts = (await getCollection("articles")).sort((a, b) => a.data.pubDate.va
             }
         </ul>
     </section>
-    <SupabaseLogin client:only="solid-js" />
+    <script src="../scripts/login.ts" />
 </Default>
