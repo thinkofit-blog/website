@@ -206,7 +206,7 @@ export const Comments = () => {
                         <span class="block h-fit text-sm">{getUserName(getUser()!)}</span>
                         <button
                             type="submit"
-                            class="block h-fit rounded-md bg-ctp-red px-2 py-1 text-ctp-base text-sm md:group-hover:visible md:invisible"
+                            class="block h-fit rounded-md bg-ctp-red px-2 py-1 text-ctp-base text-sm md:invisible md:group-hover:visible"
                             onClick={signOut}
                         >
                             Abmelden
