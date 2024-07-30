@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { Comments } from "../components/Comments.tsx";
 import FormattedDate from "../components/FormattedDate.astro";
 import Default from "./Default.astro";
 
@@ -26,6 +25,4 @@ const { title, pubDate, updatedDate } = Astro.props;
         </div>
         <slot />
     </article>
-    <h2>Kommentare</h2>
-    <Comments client:only="solid-js" />
 </Default>
